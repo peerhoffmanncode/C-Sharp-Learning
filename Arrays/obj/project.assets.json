@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Arrays\\C# Learning\\Arrays\\Arrays.csproj",
+      "projectUniqueName": "D:\\Projects\\C# Learning\\Arrays\\Arrays.csproj",
       "projectName": "Arrays",
-      "projectPath": "D:\\Projects\\Arrays\\C# Learning\\Arrays\\Arrays.csproj",
+      "projectPath": "D:\\Projects\\C# Learning\\Arrays\\Arrays.csproj",
       "packagesPath": "C:\\Users\\peerh\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Arrays\\C# Learning\\Arrays\\obj\\",
+      "outputPath": "D:\\Projects\\C# Learning\\Arrays\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

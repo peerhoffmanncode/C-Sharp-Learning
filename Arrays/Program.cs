@@ -1,2 +1,22 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace Coding.Exercise
+{
+    public class Exercise
+    {
+        public static string BuildHelloString()
+        {
+            char[] letters = { 'h', 'e', 'l', 'l', 'o' };
+            var result = "";
+            for (int i = 0; i < letters.Length; ++i)
+            {
+                result += letters[i];
+            }
+            return result;
+
+
+
+            // add a return result + 5
+
+        }
+    }
+}
+
