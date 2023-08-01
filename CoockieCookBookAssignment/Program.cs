@@ -29,11 +29,11 @@ switch (filetype)
 
 // Read ingredients
 List<Ingredient> AllStoredIngredients = IngredientsFileHandler.Read();
-// Read ingredients
+// Read recipes
 List<Recipe> AllStoredRecipes = RecipesFileHandler.Read();
 
 
-// Draw Welcome message        
+// Draw welcome message        
 Draw.WelcomeMsg();
 
 // Draw all recipes if any
@@ -43,7 +43,6 @@ Draw.AllRecipes(AllStoredRecipes);
 Draw.AllIngedients(AllStoredIngredients);
 
 // Create a Recipe
-string input;
 do
 {
     Recipe NewRecipe = Kitchen.Cook(AllStoredIngredients);
@@ -51,12 +50,11 @@ do
     { AllStoredRecipes.Add(NewRecipe); }
 
     Console.WriteLine("Create another one? [y/n]:");
-    input = Console.ReadLine();
-} while (input.ToLower() == "y");
+} while (Console.ReadLine().ToLower() == "y");
 
 // store to file
-bool stored = RecipesFileHandler.Write(AllStoredRecipes);
-if (stored)
+bool SuccessfulStored = RecipesFileHandler.Write(AllStoredRecipes);
+if (SuccessfulStored)
 {
     Console.WriteLine("Updated recipe cook book ;-)");
 }
