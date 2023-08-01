@@ -21,9 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_MethodOverloading", "OO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_DiceRollGame", "DiceRollGame\OOP_DiceRollGame.csproj", "{D741A022-0668-4240-AF39-B59604F5D5E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance_Abstract_MethodOverriding", "Inheritance_Abstract_MethodOverriding\Inheritance_Abstract_MethodOverriding.csproj", "{70D39901-BE68-4247-A1AB-48545A1964D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inheritance_Abstract_MethodOverriding", "Inheritance_Abstract_MethodOverriding\Inheritance_Abstract_MethodOverriding.csproj", "{70D39901-BE68-4247-A1AB-48545A1964D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectNullAble", "ObjectNullAble\ObjectNullAble.csproj", "{10FCB51F-85B3-44A1-9BF2-EF65D1E4AFF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectNullAble", "ObjectNullAble\ObjectNullAble.csproj", "{10FCB51F-85B3-44A1-9BF2-EF65D1E4AFF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoockieCookBookAssignment", "CoockieCookBookAssignment\CoockieCookBookAssignment.csproj", "{59D10DB8-803A-4548-B2B3-CF600D24E7A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{10FCB51F-85B3-44A1-9BF2-EF65D1E4AFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10FCB51F-85B3-44A1-9BF2-EF65D1E4AFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10FCB51F-85B3-44A1-9BF2-EF65D1E4AFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D10DB8-803A-4548-B2B3-CF600D24E7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D10DB8-803A-4548-B2B3-CF600D24E7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D10DB8-803A-4548-B2B3-CF600D24E7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D10DB8-803A-4548-B2B3-CF600D24E7A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
