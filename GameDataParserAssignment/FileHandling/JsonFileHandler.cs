@@ -55,25 +55,25 @@ public class JsonFileHandler : IFileHandler<List<Game>>
         catch (IOException ex)
         {
             // Handle I/O errors (e.g., disk full, permissions issue)
-            UserInterface.Message($"Error writing to file: {ex.Message}", ex.StackTrace, 1);
+            UserInterface.Message($"Error writing to file: {ex.Message}", ex.StackTrace, true);
             return false;
         }
         catch (UnauthorizedAccessException ex)
         {
             // Handle permissions-related errors
-            UserInterface.Message($"Unauthorized access while writing to file: {ex.Message}", ex.StackTrace, 1);
+            UserInterface.Message($"Unauthorized access while writing to file: {ex.Message}", ex.StackTrace, true);
             return false;
         }
         catch (SecurityException ex)
         {
             // Handle security policy-related errors
-            UserInterface.Message($"Security exception while writing to file: {ex.Message}", ex.StackTrace, 1);
+            UserInterface.Message($"Security exception while writing to file: {ex.Message}", ex.StackTrace, true);
             return false;
         }
         catch (ArgumentNullException ex)
         {
             // Handle null Games parameter
-            UserInterface.Message($"Error: {ex.Message}", ex.StackTrace, 1);
+            UserInterface.Message($"Error: {ex.Message}", ex.StackTrace, true);
             return false;
         }
     }

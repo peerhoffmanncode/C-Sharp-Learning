@@ -33,7 +33,7 @@ class GameDataParser
         }
         catch (JsonException ex)
         {
-            UserInterface.Message($"JSON in the file: {FullFilePath} was not in a valid format. JSON body: {ex.Message}", ex.StackTrace, 1);
+            UserInterface.Message($"JSON in the file: {FullFilePath} was not in a valid format. JSON body: {ex.Message}", ex.StackTrace, true);
         }
 
         // Visualize loaded data
@@ -47,13 +47,13 @@ class GameDataParser
 
         while (true)
         {
-            UserInterface.Message("Enter the name of the file you want to read:", "", 0);
+            UserInterface.Message("Enter the name of the file you want to read:", "", false);
             ValidFileName = UserInput.GetFileName();
             FullFilePath = FileHandler.CreateFullFilePath(ValidFileName, "data");
 
             if (FileHandler.Exists(FullFilePath) != true)
             {
-                UserInterface.Message("File not found. " + FileHandler.CreateFullFilePath(ValidFileName, "data"), "", 0);
+                UserInterface.Message("File not found. " + FileHandler.CreateFullFilePath(ValidFileName, "data"), "", false);
                 continue;
             }
             else

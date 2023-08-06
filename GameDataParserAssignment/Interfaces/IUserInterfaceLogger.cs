@@ -6,6 +6,6 @@
 
 public interface IUserInterfaceLogger
 {
-    void Message(string msg, string stackTrace, int level);
+    void Message(string msg, string stackTrace, bool error);
     void ShowGames(List<Game> listOfGames);
 }

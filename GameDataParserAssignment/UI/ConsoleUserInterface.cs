@@ -5,19 +5,11 @@
     {
         Logger = _logger;
     }
-    public void Message(string msg, string stackTrace, int level)
+    public void Message(string msg, string stackTrace, bool error)
     {
-        switch (level)
+        if (error)
         {
-            case 0:
-                Console.ResetColor();
-                break;
-            case 1:
-                Console.ForegroundColor = ConsoleColor.Red;
-                break;
-            case 2:
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                break;
+            Console.ForegroundColor = ConsoleColor.Red;
         }
 
         if (stackTrace != "")

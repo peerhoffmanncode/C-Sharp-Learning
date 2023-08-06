@@ -24,19 +24,19 @@ public class ConsoleInput : IUserInputHandler
                 _filename = Console.ReadLine();
                 if (_filename == "")
                 {
-                    UserInterface.Message("File name cannot be empty.", "", 0);
+                    UserInterface.Message("File name cannot be empty.", "", false);
                     continue;
                 }
                 else if (_filename is null)
                 {
-                    UserInterface.Message("File name cannot be null.", "", 0);
+                    UserInterface.Message("File name cannot be null.", "", false);
                     continue;
                 }
                 ValidInput = true;
             }
             catch (ArgumentNullException ex)
             {
-                UserInterface.Message("File name cannot be null.", ex.StackTrace, 0);
+                UserInterface.Message("File name cannot be null.", ex.StackTrace, false);
             }
 
         } while (ValidInput != true);

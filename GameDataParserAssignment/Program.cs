@@ -17,7 +17,8 @@ try
 }
 catch (Exception ex)
 {
-    ConsoleUI.Message($"Sorry! The application has experienced an unexpected error and will have to be closed.{Environment.NewLine}Error message: {ex.Message}", ex.StackTrace, 1);
+    ConsoleUI.Message($"Sorry! The application has experienced an unexpected error and will have to be closed." +
+        $"{Environment.NewLine}Error message: {ex.Message}", ex.StackTrace, true);
 }
 finally
 {
