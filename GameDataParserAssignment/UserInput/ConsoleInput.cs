@@ -6,14 +6,12 @@
 
 public class ConsoleInput : IUserInputHandler
 {
-    public ConsoleInput(IUserInterfaceLogger userInterface, IFileHandler<List<Game>> fileHandler)
+    public ConsoleInput(IUserInterfaceLogger userInterface)
     {
         UserInterface = userInterface;
-        FileHandler = fileHandler;
     }
 
     IUserInterfaceLogger UserInterface { get; }
-    IFileHandler<List<Game>> FileHandler { get; }
 
     public string GetFileName()
     {

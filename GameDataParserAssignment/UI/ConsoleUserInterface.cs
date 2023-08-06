@@ -31,13 +31,17 @@
 
     public void ShowGames(List<Game> listOfGames)
     {
-        if (listOfGames.Count > 0)
+        if (listOfGames is not null && listOfGames.Count > 0)
         {
             Console.WriteLine("Loaded games are:");
             foreach (var game in listOfGames)
             {
                 Console.WriteLine(game);
             }
+        }
+        else if (listOfGames is null)
+        {
+            return;
         }
         else
         {

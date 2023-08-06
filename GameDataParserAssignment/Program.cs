@@ -5,7 +5,7 @@ using GameDataParserAssignment.FileHandling;
 IFileHandler<string> LoggingFileHandler = new LoggerFileHandling();
 IUserInterfaceLogger ConsoleUI = new ConsoleUserInterface(LoggingFileHandler);
 IFileHandler<List<Game>> JsonFileHandler = new JsonFileHandler(ConsoleUI);
-IUserInputHandler UserInput = new ConsoleInput(ConsoleUI, JsonFileHandler);
+IUserInputHandler UserInput = new ConsoleInput(ConsoleUI);
 
 // initialize a game instance with the handlers to be injected
 GameDataParser gameDataParser = new(JsonFileHandler, ConsoleUI, UserInput);

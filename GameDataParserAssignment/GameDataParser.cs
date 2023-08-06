@@ -18,8 +18,33 @@ class GameDataParser
 
     public void run()
     {
+
+        // Get a valid Filepath from the user
+        string FullFilePath = GetValidFileName();
+
+        // Read data from valid file
+        List<Game> listOfGames = default;
+        try
+        {
+            if (!string.IsNullOrEmpty(FullFilePath))
+            {
+                listOfGames = FileHandler.Read(FullFilePath);
+            }
+        }
+        catch (JsonException ex)
+        {
+            UserInterface.Message($"JSON in the file: {FullFilePath} was not in a valid format. JSON body: {ex.Message}", ex.StackTrace, 1);
+        }
+
+        // Visualize loaded data
+        UserInterface.ShowGames(listOfGames);
+
+    }
+
+    public string GetValidFileName()
+    {
         string FullFilePath, ValidFileName = "";
-        List<Game> listOfGames;
+
         while (true)
         {
             UserInterface.Message("Enter the name of the file you want to read:", "", 0);
@@ -33,24 +58,8 @@ class GameDataParser
             }
             else
             {
-                // Read data from valid file
-                try
-                {
-                    if (!string.IsNullOrEmpty(FullFilePath))
-                    {
-                        listOfGames = FileHandler.Read(FullFilePath);
-                        break;
-                    }
-                }
-                catch (JsonException ex)
-                {
-                    UserInterface.Message($"JSON in the file: {ValidFileName} was not in a valid format. JSON body: {ex.Message}", ex.StackTrace, 1);
-                }
+                return FullFilePath;
             }
         }
-
-        // Visualize loaded data
-        UserInterface.ShowGames(listOfGames);
-
     }
 }
