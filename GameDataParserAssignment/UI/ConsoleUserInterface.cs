@@ -15,6 +15,9 @@
             case 1:
                 Console.ForegroundColor = ConsoleColor.Red;
                 break;
+            case 2:
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                break;
         }
 
         if (stackTrace != "")
@@ -28,10 +31,17 @@
 
     public void ShowGames(List<Game> listOfGames)
     {
-        Console.WriteLine("Loaded games are:");
-        foreach (var game in listOfGames)
+        if (listOfGames.Count > 0)
         {
-            Console.WriteLine($"{game.Title}, released in {game.ReleaseYear}, rating: {game.Rating}");
+            Console.WriteLine("Loaded games are:");
+            foreach (var game in listOfGames)
+            {
+                Console.WriteLine(game);
+            }
+        }
+        else
+        {
+            Console.WriteLine("No games are present in the input file.");
         }
     }
 

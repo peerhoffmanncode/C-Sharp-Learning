@@ -49,14 +49,8 @@ class GameDataParser
             }
         }
 
-        if (listOfGames != null)
-        {
-            // Visualize loaded data
-            UserInterface.ShowGames(listOfGames);
-        }
-        else
-        {
-            UserInterface.Message("No games are present in the input file.", "", 0);
-        }
+        // Visualize loaded data
+        UserInterface.ShowGames(listOfGames);
+
     }
 }
