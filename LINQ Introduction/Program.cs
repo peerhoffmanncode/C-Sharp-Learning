@@ -14,8 +14,6 @@ foreach (var number in oddNumber)
     Console.WriteLine(number);
 }
 
-
-
 Console.ReadKey();
 
 
