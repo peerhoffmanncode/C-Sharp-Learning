@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameDataParserAssignment", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericTypes", "GenericTypes\GenericTypes.csproj", "{026A71C3-BB67-46A3-B2EB-02D9B8F12040}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{B0ADE551-F67E-4C4A-B579-2B4ABAF6DA1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates", "Delegates\Delegates.csproj", "{B0ADE551-F67E-4C4A-B579-2B4ABAF6DA1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dictionary", "Dictionary\Dictionary.csproj", "{DEC4AEAF-41EA-4605-B1BF-33471C1CF117}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_Caching", "Assignment_Caching\Assignment_Caching.csproj", "{C28C4600-A528-4770-888F-7450CC2C8DAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,14 @@ Global
 		{B0ADE551-F67E-4C4A-B579-2B4ABAF6DA1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0ADE551-F67E-4C4A-B579-2B4ABAF6DA1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0ADE551-F67E-4C4A-B579-2B4ABAF6DA1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC4AEAF-41EA-4605-B1BF-33471C1CF117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC4AEAF-41EA-4605-B1BF-33471C1CF117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC4AEAF-41EA-4605-B1BF-33471C1CF117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC4AEAF-41EA-4605-B1BF-33471C1CF117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C28C4600-A528-4770-888F-7450CC2C8DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28C4600-A528-4770-888F-7450CC2C8DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28C4600-A528-4770-888F-7450CC2C8DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28C4600-A528-4770-888F-7450CC2C8DAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
