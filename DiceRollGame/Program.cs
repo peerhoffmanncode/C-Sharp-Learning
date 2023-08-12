@@ -3,7 +3,7 @@ using OOP_DiceRollGame.Game.Play;
 
 namespace DiceRollGame
 {
-    internal class Program_test
+    internal class Program
     {
         private static void Main()
         {
