@@ -1,7 +1,5 @@
-﻿Cache<String, String> CacheStoreage = new();
-IDataDownloader slowDataDownloader = new SlowDataDownloader();
-
-IDataDownloader dataDownloader = new DecoratedDataDownloader(slowDataDownloader, CacheStoreage);
+﻿
+IDataDownloader dataDownloader = new DecoratedDataDownloader(new SlowDataDownloader(), new Cache<String, String>());
 for (int i = 0; i < 10; i++)
 {
     Console.WriteLine(dataDownloader.DownloadData("id1"));
