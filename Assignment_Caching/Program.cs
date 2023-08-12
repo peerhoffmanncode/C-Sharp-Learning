@@ -1,7 +1,7 @@
-﻿
-Cache<String, String> CacheStoreage = new();
+﻿Cache<String, String> CacheStoreage = new();
+IDataDownloader slowDataDownloader = new SlowDataDownloader();
 
-IDataDownloader dataDownloader = new SlowDataDownloader(CacheStoreage);
+IDataDownloader dataDownloader = new DecoratedDataDownloader(slowDataDownloader, CacheStoreage);
 for (int i = 0; i < 10; i++)
 {
     Console.WriteLine(dataDownloader.DownloadData("id1"));
@@ -20,48 +20,48 @@ public interface IDataDownloader
     string DownloadData(string resourceId);
 }
 
-public class SlowDataDownloader : IDataDownloader
+public class DecoratedDataDownloader : IDataDownloader
 {
-    private Cache<String, String> _CacheStorage;
-    public SlowDataDownloader(Cache<String, String> CacheStorage)
+    private readonly IDataDownloader _download;
+    private readonly Cache<String, String> _cacheStorage;
+    public DecoratedDataDownloader(IDataDownloader Downloader, Cache<String, String> CacheStorage)
     {
-        _CacheStorage = CacheStorage;
+        _download = Downloader;
+        _cacheStorage = CacheStorage;
     }
+
     public string DownloadData(string resourceId)
     {
-        var (inStorage, data) = _CacheStorage.Read(resourceId);
+        return _cacheStorage.Read(resourceId, _download.DownloadData);
+    }
+}
 
-        if (!inStorage)
-        {
-            //let's imagine this method downloads real data,
-            //and it does it slowly
-            Thread.Sleep(1000);
-            data = $"Some data for {resourceId}";
-            _CacheStorage.Write(resourceId, data);
-        }
-        return data;
+public class SlowDataDownloader : IDataDownloader
+{
+    public string DownloadData(string resourceId)
+    {
+        //let's imagine this method downloads real data,
+        //and it does it slowly
+        Thread.Sleep(1000);
+        return $"Some data for {resourceId}";
     }
 }
 
 
-public class Cache<TKey, Tvalue> where TKey : notnull
+public class Cache<TKey, TValue> where TKey : notnull where TValue : notnull
 {
-    private Dictionary<TKey, Tvalue> _storage;
-    public Cache()
+    private readonly Dictionary<TKey, TValue> _storage = new();
+    public TValue Read(TKey identifierKey, Func<TKey, TValue> predicate)
     {
-        _storage = new Dictionary<TKey, Tvalue>();
+        if (!this._storage.ContainsKey(identifierKey))
+        {
+            this._storage[identifierKey] = predicate(identifierKey);
+        }
+        return this._storage[identifierKey];
     }
-    public void Write(TKey identifierKey, Tvalue dataToStore)
+    public void Write(TKey identifierKey, Func<TKey, TValue> predicate)
     {
-        this._storage[identifierKey] = dataToStore;
+        this._storage[identifierKey] = predicate(identifierKey);
     }
 
-    public (bool Status, Tvalue Data) Read(TKey identifierKey)
-    {
-        if (this._storage.ContainsKey(identifierKey))
-        {
-            return (true, this._storage[identifierKey]);
-        }
-        return (false, default(Tvalue?));
-    }
 }
