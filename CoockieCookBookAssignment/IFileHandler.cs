@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+
 public interface IFileHandler<T>
 {
 
@@ -34,20 +35,29 @@ public class FromMemory<T> : IFileHandler<T>
 
 
         // Create the data list and add ingredients to it.
-        data = new List<T>
-        {
-            (T)(object)ingredient1,
-            (T)(object)ingredient2,
-            (T)(object)ingredient3,
-            (T)(object)ingredient4,
-            (T)(object)ingredient5,
-            (T)(object)ingredient6,
-            (T)(object)ingredient7,
-            (T)(object)ingredient8
-        };
+        this.data = new List<T>();
+        data.Add((T)(object)ingredient1);
+        data.Add((T)(object)ingredient2);
+        data.Add((T)(object)ingredient3);
+        data.Add((T)(object)ingredient4);
+        data.Add((T)(object)ingredient5);
+        data.Add((T)(object)ingredient6);
+        data.Add((T)(object)ingredient7);
+        data.Add((T)(object)ingredient8);
     }
 
-    public List<T> Read() => data ?? new List<T>();
+    public List<T> Read()
+    {
+        if (data == null)
+        {
+            return new List<T>();
+        }
+        else
+        {
+            return data;
+        }
+    }
+
     public bool Write(List<T> data) => false;
 }
 
