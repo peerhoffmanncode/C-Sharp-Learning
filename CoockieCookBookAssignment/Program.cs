@@ -23,15 +23,20 @@ switch (filetype)
         break;
 }
 
-// Read Data from memory and store to file
-//List<Ingredient> AllStoredIngredients = memoryHandler.Read();
-//JsonFileHandler.Write(AllStoredIngredients);
 
 // Read ingredients
 List<Ingredient> AllStoredIngredients = IngredientsFileHandler.Read();
+if (AllStoredIngredients.Count() < 1)
+{
+    // Create mocked Ingredients and store to json
+    IngredientsFileHandler = new FromMemory<Ingredient>(filename_ingredients);
+    AllStoredIngredients = IngredientsFileHandler.Read();
+    IngredientsFileHandler = new FromJSON<Ingredient>(filename_ingredients);
+    IngredientsFileHandler.Write(AllStoredIngredients);
+}
+
 // Read recipes
 List<Recipe> AllStoredRecipes = RecipesFileHandler.Read();
-
 
 // Draw welcome message        
 Draw.WelcomeMsg();
@@ -53,8 +58,8 @@ do
 } while (Console.ReadLine().ToLower() == "y");
 
 // store to file
-bool SuccessfulStored = RecipesFileHandler.Write(AllStoredRecipes);
-if (SuccessfulStored)
+bool SuccessfileStored = RecipesFileHandler.Write(AllStoredRecipes);
+if (SuccessfileStored)
 {
     Console.WriteLine("Updated recipe cook book ;-)");
 }
