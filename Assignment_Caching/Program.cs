@@ -42,6 +42,7 @@ public class SlowDataDownloader : IDataDownloader
         //and it does it slowly
         Thread.Sleep(1000);
         return $"Some data for {resourceId}";
+        
     }
 }
 

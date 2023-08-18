@@ -37,13 +37,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates", "Delegates\Dele
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dictionary", "Dictionary\Dictionary.csproj", "{DEC4AEAF-41EA-4605-B1BF-33471C1CF117}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_Caching", "Assignment_Caching\Assignment_Caching.csproj", "{C28C4600-A528-4770-888F-7450CC2C8DAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment_Caching", "Assignment_Caching\Assignment_Caching.csproj", "{C28C4600-A528-4770-888F-7450CC2C8DAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Topics", "Topics", "{7739B561-1659-4AAE-80F0-45A4F000A431}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment", "Assignment", "{8E2A84A2-C0AD-465B-A3B3-DBEA4117F726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ Introduction", "LINQ Introduction\LINQ Introduction.csproj", "{3429B55D-3F79-4438-85C2-6D8482FC1CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ Introduction", "LINQ Introduction\LINQ Introduction.csproj", "{3429B55D-3F79-4438-85C2-6D8482FC1CBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSV Read Class", "CSV Read Class\CSV Read Class.csproj", "{7175CBF6-40D6-43C0-9E67-EB5F9398DA5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +129,10 @@ Global
 		{3429B55D-3F79-4438-85C2-6D8482FC1CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3429B55D-3F79-4438-85C2-6D8482FC1CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3429B55D-3F79-4438-85C2-6D8482FC1CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7175CBF6-40D6-43C0-9E67-EB5F9398DA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7175CBF6-40D6-43C0-9E67-EB5F9398DA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7175CBF6-40D6-43C0-9E67-EB5F9398DA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7175CBF6-40D6-43C0-9E67-EB5F9398DA5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +157,7 @@ Global
 		{DEC4AEAF-41EA-4605-B1BF-33471C1CF117} = {7739B561-1659-4AAE-80F0-45A4F000A431}
 		{C28C4600-A528-4770-888F-7450CC2C8DAD} = {8E2A84A2-C0AD-465B-A3B3-DBEA4117F726}
 		{3429B55D-3F79-4438-85C2-6D8482FC1CBA} = {7739B561-1659-4AAE-80F0-45A4F000A431}
+		{7175CBF6-40D6-43C0-9E67-EB5F9398DA5B} = {7739B561-1659-4AAE-80F0-45A4F000A431}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB2C5C71-34B9-4A13-81AD-960EB9180AD6}
