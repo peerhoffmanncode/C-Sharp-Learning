@@ -6,6 +6,8 @@ using System.Reflection;
 Person validPerson = new("John", 1982);
 Person inValidPerson = new("J2dfgfgdfgdfgdfg", 1900);
 
+Console.WriteLine(validPerson.Equals(validPerson));
+
 var validator = new Validator();
 
 Console.WriteLine(validator.Validate(validPerson) ? $"{validPerson} is valid" : $"{validPerson} is not valid!");
@@ -35,7 +37,7 @@ public class Person
 [AttributeUsage(AttributeTargets.Property)]
 public class StringLengthValidatorAttribute : Attribute
 {
-    public int Min { get;  }
+    public int Min { get; }
     public int Max { get; }
 
     public StringLengthValidatorAttribute(int min, int max)
