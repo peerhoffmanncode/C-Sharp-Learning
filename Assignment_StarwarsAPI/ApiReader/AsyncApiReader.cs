@@ -2,6 +2,8 @@
 
 using System.Text.Json;
 
+namespace Assignment_StarwarsAPI.ApiReader;
+
 public class AsyncApiReader : IAsyncApiReader
 {
     public async Task<string> Read(string BaseUrl, string UriResource)
@@ -51,11 +53,11 @@ public class AsyncApiReader : IAsyncApiReader
         return (_planets, _allPlanets);
     }
 
-    public bool IsVaildJson(string jsonString, out Planets _data)
+    public static bool IsVaildJson(string jsonString, out Planets _data)
     {
         if (jsonString != null)
         {
-            _data = JsonSerializer.Deserialize<Planets>(jsonString);
+            _data = JsonSerializer.Deserialize<Planets>(jsonString)!;
             if (_data == null)
             {
                 throw new InvalidOperationException("could not parse data from API!");

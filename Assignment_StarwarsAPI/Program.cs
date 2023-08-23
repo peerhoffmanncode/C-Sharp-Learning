@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using Assignment_StarwarsAPI.ApiReader;
+using Assignment_StarwarsAPI.Display;
 using Assignment_StarwarsAPI.Utils;
 
 // define constants
@@ -7,10 +9,10 @@ const string BaseUrl = "https://swapi.dev/api/";
 const string UriResource = "planets";
 
 // define default columns
-List<string> possibleColumns = new List<string> { "Name", "Population", "Diameter", "SurfaceWater", "OrbitalPeriod", "Gravity" };
+List<string> possibleColumns = new() { "Name", "Population", "Diameter", "SurfaceWater", "OrbitalPeriod", "Gravity" };
 
 // instanciate ApiReader
-AsyncApiReader reader = new AsyncApiReader();
+AsyncApiReader reader = new();
 // Get data from API
 (Planets PlanetOverview, List<PlanetData> AllPlanetsData) = await reader.ReadAll(BaseUrl, UriResource);
 
@@ -29,7 +31,7 @@ do
         // get instances holding min and max values
         (PlanetData? MinValue, PlanetData? MaxValue) = Utils.FindMinMax(AllPlanetsData, selectedColumn);
         // show table of content with just the min and max entries
-        table.AllPlanets = new List<PlanetData>() { MinValue, MaxValue };
+        table.AllPlanets = new List<PlanetData>() { MinValue!, MaxValue! };
         table.Show($"\nTable of content for minimal and maximal values: {selectedColumn}", possibleColumns);
     }
     else

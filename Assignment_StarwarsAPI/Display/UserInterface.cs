@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+namespace Assignment_StarwarsAPI.Display;
 
 public static class UserInterface
 {
@@ -9,7 +10,7 @@ public static class UserInterface
         do
         {
             userInput = Console.ReadLine();
-            userInput = userInput.Trim();
+            userInput = userInput!.Trim();
         } while (string.IsNullOrEmpty(userInput));
         return userInput!;
     }

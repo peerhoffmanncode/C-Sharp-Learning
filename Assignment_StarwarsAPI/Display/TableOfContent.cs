@@ -1,8 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+namespace Assignment_StarwarsAPI.Display;
+
 public class TableOfContent
 {
-
     public Planets PlanetOverview { get; set; }
     public List<PlanetData> AllPlanets { get; set; }
 
@@ -55,7 +56,7 @@ public class TableOfContent
         }
     }
 
-    private int GetPropertyValueLength(object obj, string propertyName)
+    private static int GetPropertyValueLength(object obj, string propertyName)
     {
         var propertyInfo = obj.GetType().GetProperty(propertyName);
         if (propertyInfo != null)
@@ -66,7 +67,7 @@ public class TableOfContent
         return 0;
     }
 
-    private string GetPropertyValue(object obj, string propertyName)
+    private static string GetPropertyValue(object obj, string propertyName)
     {
         var propertyInfo = obj.GetType().GetProperty(propertyName);
         if (propertyInfo != null)
