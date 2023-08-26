@@ -35,22 +35,22 @@ internal class FileHandler : IFileHandler
             File.WriteAllText(filename, string.Join(Environment.NewLine, Data));
             return true;
         }
-        catch (IOException ex)
+        catch (IOException)
         {
             // Handle I/O errors (e.g., disk full, permissions issue)            
             return false;
         }
-        catch (UnauthorizedAccessException ex)
+        catch (UnauthorizedAccessException)
         {
             // Handle permissions-related errors            
             return false;
         }
-        catch (SecurityException ex)
+        catch (SecurityException)
         {
             // Handle security policy-related errors            
             return false;
         }
-        catch (ArgumentNullException ex)
+        catch (ArgumentNullException)
         {
             // Handle null Games parameter            
             return false;
