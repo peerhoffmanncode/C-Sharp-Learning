@@ -6,7 +6,7 @@ const string BasePath = @"tickets\";
 
 // execute TicketSystem
 
-TicketSystem.run(BasePath, new FileHandler());
+TicketSystem.Run(BasePath, new FileHandler());
 
 Console.WriteLine("Press any key to close.");
 Console.ReadKey();

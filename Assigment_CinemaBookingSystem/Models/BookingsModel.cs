@@ -13,7 +13,7 @@ internal record BookingsModel
         Date = date;
     }
 
-    public string getInvaruant()
+    public string GetInvaruant()
     {
         return $"{this.Date.Date.ToString("d", CultureInfo.InvariantCulture)} | {this.Date.TimeOfDay.ToString("t", CultureInfo.InvariantCulture)}";
     }

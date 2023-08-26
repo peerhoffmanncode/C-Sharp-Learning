@@ -29,7 +29,7 @@ public class JsonFileHandler : IFileHandler<List<Game>>
         return $"{Environment.CurrentDirectory}{subFolder}{Path.DirectorySeparatorChar}{filename}.json";
     }
 
-    public List<Game> Read(string filename)
+    public List<Game>? Read(string filename)
     {
         List<Game> data = new();
         if (!string.IsNullOrEmpty(filename) && File.Exists(filename))

@@ -9,7 +9,7 @@ internal static class TicketSystem
 {
 
     const string outputFile = "aggregatedTickets.txt";
-    public static void run(string BasePath, IFileHandler fileHandler)
+    public static void Run(string BasePath, IFileHandler fileHandler)
     {
         // get all files in base folder
         string[] allTicketPDFs = FileUtils.FindAllFiles(BasePath, "*.pdf");
@@ -19,14 +19,14 @@ internal static class TicketSystem
         foreach (string ticketPDF in allTicketPDFs)
         {
             List<string> ReadText = PDFFileHandler.ReadWords(ticketPDF);
-            List<Hyperlink> ReadHyperlinks = PDFFileHandler.ReadHyperlinks(ticketPDF);
+            List<Hyperlink>? ReadHyperlinks = PDFFileHandler.ReadHyperlinks(ticketPDF);
             allBookings.AddRange(Utils.ExtractFilms(ReadText, ReadHyperlinks));
         }
 
         List<string> data = new();
         foreach (var Booking in allBookings)
         {
-            data.Add($"{Booking.Title,-30} | {Booking.getInvaruant()}");
+            data.Add($"{Booking.Title,-30} | {Booking.GetInvaruant()}");
         }
         fileHandler.Write(outputFile, data);
         Console.WriteLine($"Result saved to {outputFile}");

@@ -5,7 +5,7 @@ internal static class PDFFileHandler
 {
     public static List<string> ReadWords(string Path)
     {
-        List<string> foundText = new List<string>();
+        List<string> foundText = new();
         using (PdfDocument document = PdfDocument.Open($@"{Path}"))
         {
             foreach (Page page in document.GetPages())
@@ -17,14 +17,12 @@ internal static class PDFFileHandler
         return foundText;
     }
 
-    public static List<Hyperlink> ReadHyperlinks(string Path)
+    public static List<Hyperlink>? ReadHyperlinks(string Path)
     {
-        using (PdfDocument document = PdfDocument.Open($@"{Path}"))
+        using PdfDocument document = PdfDocument.Open($@"{Path}");
+        foreach (Page page in document.GetPages())
         {
-            foreach (Page page in document.GetPages())
-            {
-                return (List<Hyperlink>)page.GetHyperlinks();                
-            }
+            return (List<Hyperlink>)page.GetHyperlinks();
         }
         return null;
     }

@@ -3,13 +3,13 @@ using UglyToad.PdfPig.Content;
 
 internal class Utils
 {
-    readonly static Dictionary<string, CultureInfo> _MappingCultures2Format = new Dictionary<string, CultureInfo>
+    readonly static Dictionary<string, CultureInfo> _MappingCultures2Format = new()
     {
         [".fr"] = new CultureInfo("fr-FR"),
         [".com"] = new CultureInfo("en-US"),
         [".jp"] = new CultureInfo("ja-JP"),
     };
-    public static List<BookingsModel> ExtractFilms(List<string> pdfTexts, List<Hyperlink> Hyperlinks)
+    public static List<BookingsModel> ExtractFilms(List<string> pdfTexts, List<Hyperlink>? Hyperlinks)
     {
         List<BookingsModel> data = new();
 
@@ -27,8 +27,8 @@ internal class Utils
             string _cleanedPdfText = pdfText.Trim();
             int headerIndex = pdfText.IndexOf(removeString1) + removeString1.Length;
             int endingIndex = pdfText.IndexOf(removeString2) - headerIndex;
-            _cleanedPdfText = _cleanedPdfText.Substring(headerIndex, _cleanedPdfText.Length - headerIndex);
-            _cleanedPdfText = _cleanedPdfText.Substring(0, endingIndex);
+            _cleanedPdfText = _cleanedPdfText[headerIndex..];
+            _cleanedPdfText = _cleanedPdfText[..endingIndex];
 
             // read all relevant parts of the pdf text
             string[] parts = _cleanedPdfText.Split(new string[] { "Title:", "Date:", "Time:" }, StringSplitOptions.RemoveEmptyEntries);
