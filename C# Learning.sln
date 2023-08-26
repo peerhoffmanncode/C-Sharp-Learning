@@ -51,7 +51,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Attributes", "Attributes\At
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorOverrideing", "OperatorOverrideing\OperatorOverrideing.csproj", "{97E02F5C-0CA5-4A64-A785-5BC25AA5F67A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_StarwarsAPI", "Assignment_StarwarsAPI\Assignment_StarwarsAPI.csproj", "{FE4491AA-72A4-4C42-B21A-14FA5F3A3C03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment_StarwarsAPI", "Assignment_StarwarsAPI\Assignment_StarwarsAPI.csproj", "{FE4491AA-72A4-4C42-B21A-14FA5F3A3C03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedStrings", "AdvancedStrings\AdvancedStrings.csproj", "{CB090B0B-5398-4AF1-A93D-BF5A6F38343E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assigment_CinemaBookingSystem", "Assigment_CinemaBookingSystem\Assigment_CinemaBookingSystem.csproj", "{F69BF6FE-2A30-40D7-989E-FF50A4A9FF40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,6 +155,14 @@ Global
 		{FE4491AA-72A4-4C42-B21A-14FA5F3A3C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE4491AA-72A4-4C42-B21A-14FA5F3A3C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE4491AA-72A4-4C42-B21A-14FA5F3A3C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB090B0B-5398-4AF1-A93D-BF5A6F38343E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB090B0B-5398-4AF1-A93D-BF5A6F38343E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB090B0B-5398-4AF1-A93D-BF5A6F38343E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB090B0B-5398-4AF1-A93D-BF5A6F38343E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69BF6FE-2A30-40D7-989E-FF50A4A9FF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69BF6FE-2A30-40D7-989E-FF50A4A9FF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69BF6FE-2A30-40D7-989E-FF50A4A9FF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69BF6FE-2A30-40D7-989E-FF50A4A9FF40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -179,6 +191,7 @@ Global
 		{DC0FE733-6211-4C6F-83FF-12EA15A3E6A3} = {7739B561-1659-4AAE-80F0-45A4F000A431}
 		{97E02F5C-0CA5-4A64-A785-5BC25AA5F67A} = {7739B561-1659-4AAE-80F0-45A4F000A431}
 		{FE4491AA-72A4-4C42-B21A-14FA5F3A3C03} = {8E2A84A2-C0AD-465B-A3B3-DBEA4117F726}
+		{F69BF6FE-2A30-40D7-989E-FF50A4A9FF40} = {8E2A84A2-C0AD-465B-A3B3-DBEA4117F726}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB2C5C71-34B9-4A13-81AD-960EB9180AD6}

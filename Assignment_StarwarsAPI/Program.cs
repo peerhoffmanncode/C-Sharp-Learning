@@ -1,8 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Collections.Generic;
 using Assignment_StarwarsAPI.ApiReader;
 using Assignment_StarwarsAPI.Display;
 using Assignment_StarwarsAPI.Utils;
+
 
 // define constants
 const string BaseUrl = "https://swapi.dev/api/";
