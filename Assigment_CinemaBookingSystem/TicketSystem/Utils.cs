@@ -37,19 +37,19 @@ internal class Utils
                 // get title and date&time
                 var title = parts[i];
                 var inputDateTime = $"{parts[i + 1]} {parts[i + 2]}";
-                data.Add(new BookingsModel(title, GetDateTimeByHyperlink(inputDateTime, hyperlink)));
+                data.Add(new BookingsModel(title, GetDateTimeByCulture(inputDateTime, hyperlink)));
             }
         }
         return data;
     }
-    internal static DateTime GetDateTimeByHyperlink(string inputDateTime, string hyperlink)
+    internal static DateTime GetDateTimeByCulture(string inputDateTime, string hyperlink)
     {
         foreach (var culture in _MappingCultures2Format)
         {
             if (hyperlink.Contains(culture.Key))
             {
-                CultureInfo.CurrentCulture = _MappingCultures2Format[culture.Key];
-                return DateTime.Parse(inputDateTime);
+                // CultureInfo.CurrentCulture = _MappingCultures2Format[culture.Key];
+                return DateTime.Parse(inputDateTime, _MappingCultures2Format[culture.Key]);
             }
         }
         throw new Exception("No valid date type found!");
