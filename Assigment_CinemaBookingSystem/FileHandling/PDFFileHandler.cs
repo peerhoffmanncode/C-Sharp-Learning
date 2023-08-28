@@ -12,7 +12,7 @@ internal static class PDFFileHandler
             {
                 string pageText = page.Text;
                 foundText.Add(pageText);
-            }
+            } 
         }
         return foundText;
     }
