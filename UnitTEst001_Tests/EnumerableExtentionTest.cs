@@ -39,7 +39,7 @@ namespace UnitTest001_Tests
         {
             int[] numbers = new int[] { data };
 
-            Assert.AreEqual(0, numbers.SumOfEvenNumbers());
+            Assert.AreEqual(result, numbers.SumOfEvenNumbers());
         }
 
 
