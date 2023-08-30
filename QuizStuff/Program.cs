@@ -9,13 +9,6 @@ public interface Icompress
     void Compress();
 }
 
-
-public class xxx : Icompress
-{
-    private void Compress() => Console.WriteLine("stuff");
-}
-
-
 public class FullName
 {
     public string First { get; init; }

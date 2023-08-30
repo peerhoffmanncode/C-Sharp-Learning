@@ -1,23 +1,23 @@
-﻿namespace Coding.Exercise
-{
-    public class Exercise
-    {
-        public List<string> GetOnlyUpperCaseWords(List<string> words)
-        {
-            List<string> result = new List<string>();
+﻿
+Console.WriteLine("fuu");
 
-            foreach (string word in words)
+public class Exercise
+{
+    public List<string> GetOnlyUpperCaseWords(List<string> words)
+    {
+        List<string> result = new List<string>();
+
+        foreach (string word in words)
+        {
+            if (word == word.ToUpper() && word.All(x => char.IsLetter(x)))
             {
-                if (word == word.ToUpper() && word.All(x => char.IsLetter(x)))
+                if (!result.Contains(word))
                 {
-                    if (!result.Contains(word))
-                    {
-                        result.Add(word);
-                        continue;
-                    }
+                    result.Add(word);
+                    continue;
                 }
             }
-            return result;
         }
+        return result;
     }
 }
